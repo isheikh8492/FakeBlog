@@ -17,8 +17,13 @@
 h1,
 h2,
 h3,
-h4 {
+h4,
+span {
     font-family: 'Lobster', cursive;
+}
+
+span#new_post_heading {
+    font-size: 15px;
 }
 
 .date {
@@ -48,7 +53,10 @@ h4 {
 }
 
 .post h2 a,
-.post h2 a:visited {
+.post h2 a:visited,
+.page-header nav div:hover,
+div.navbar-right-child.login-logout span a:hover,
+div a span#new_post_heading:hover {
     color: #000000;
 }
 
@@ -64,7 +72,46 @@ h4 {
     border-color: #C25100;
 }
 
-.btn-default:hover {
+.btn-default:hover,
+.login-logout span {
     color: #FFFFFF;
     background-color: #C25100;
+}
+
+main.container {
+    margin-top: 110px;
+}
+
+a.navbar-brand {
+    /* padding-top: 0px; */
+    margin-left: 32px;
+}
+
+nav.navbar.fixed-top.navbar-light {
+    background-color: #C25100;
+}
+
+span#new_post_heading {
+    font-size: 15px;
+}
+
+div.published-article-time {
+    padding-top: 12px;
+    padding-bottom: 15px;
+    font-weight: bold;
+}
+
+div.navbar-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+div.navbar-right-child.login-logout {
+    line-height: 69px;
+    text-align: center;
+}
+
+div.navbar-right-child.login-logout span a {
+    color: #ffffff;
 }

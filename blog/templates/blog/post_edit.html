@@ -1,5 +1,10 @@
 {% extends 'blog/base.html' %}
 
+{% load i18n %}
+
+{% block page_title %}{% trans "Edit Post" %}{% endblock page_title %}
+
+
 {% block content %}
     <h2>New post</h2>
     <form method="POST" class="post-form">{% csrf_token %}
