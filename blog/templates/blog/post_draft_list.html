@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% load i18n %}
+
+{% block page_title %}{% trans "Draft: "{{ post.title }} %}{% endblock page_title %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <p class="date"><b>Created Date:</b> {{ post.created_date }}</p>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|truncatechars:200 }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

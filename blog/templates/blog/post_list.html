@@ -1,13 +1,23 @@
 {% extends 'blog/base.html' %}
 
+{% load i18n %}
+
+{% block page_title %}{% trans " FakeBlog | Where Every Story is Fake." %}{% endblock page_title %}
 
 {% block content %}
     {% for post in posts %}
         <article class="post">
-            <time class="date">
-                {{ post.published_date }}
-            </time>
             <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <div class="published-article-time">
+                <time class="date">
+                    {{ post.published_date }}
+                </time>
+            </div>
+            <div class="published-article-time">
+                <div class="date">
+                    Published By: <span style="color: black;">{{ post.author }}</span>
+                </div>
+            </div>
             <p>{{ post.text|linebreaksbr|truncatechars:401 }}</p>
         </article>
     {% endfor %}
