@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +26,7 @@ SECRET_KEY = 'r&5b9=v3e6r+6sy89p1tt4zfc1r-u+$&zh)1kj4+n3pd2ik!g3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', 'fakeblogg.herokuapp.com']
 
 
 # Application definition
@@ -77,10 +78,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'fakeblog_db',
-        'USER' : 'isheikh8492',
-        'PASSWORD' : '0Nlyonee@01',
-        'HOST' : 'localhost',
+        'NAME': 'de0vmq7ugd1ab6',
+        'USER' : 'fpxgtquaurpzqf',
+        'PASSWORD' : '9feacfb6b43220b3dbd416d6438af6ec4445bd0a11fa501bccb70996d0b6e3c8',
+        'HOST' : 'ec2-174-129-225-160.compute-1.amazonaws.com',
         'PORT' : '5432',
     }
 }
@@ -124,5 +125,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+django_heroku.settings(locals())
 
 LOGIN_REDIRECT_URL = '/'
